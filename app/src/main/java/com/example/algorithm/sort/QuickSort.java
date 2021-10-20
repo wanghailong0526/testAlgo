@@ -29,13 +29,13 @@ public class QuickSort {
         if (p >= r) return;
 
         int q = partition(a, p, r); // 获取分区点
-        System.out.println("p=" + p + " r=" + (q - 1));
-        System.out.println("执行了前半部分！！！");
+        System.out.println("A p=" + p + " r=" + (q - 1));
+        System.out.println("A 执行了前半部分！！！");
         quickSortInternally(a, p, q - 1);
 
-        System.out.println("q=" + (q + 1) + " r=" + r);
+        System.out.println("B q=" + (q + 1) + " r=" + r);
         quickSortInternally(a, q + 1, r);
-        System.out.println("执行了后半部分！！！");
+        System.out.println("B 执行了后半部分！！！");
     }
 
     /**

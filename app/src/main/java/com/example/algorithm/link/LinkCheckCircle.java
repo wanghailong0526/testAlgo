@@ -17,7 +17,7 @@ public class LinkCheckCircle {
         Node link = LinkUtils.createLink(node);
         System.out.println("链表：");
         LinkUtils.printAll(header);
-        System.out.println("\n");
+        System.out.println();
         link.next = header;
         System.out.println("是否有环路：" + (checkCircle(header) ? "有" : "无"));
 

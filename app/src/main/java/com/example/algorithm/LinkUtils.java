@@ -29,4 +29,14 @@ public class LinkUtils {
         }
         return node;
     }
+
+    /**
+     * 创建结点
+     *
+     * @param data
+     * @return
+     */
+    public static Node createNode(int data) {
+        return new Node(null, data);
+    }
 }
