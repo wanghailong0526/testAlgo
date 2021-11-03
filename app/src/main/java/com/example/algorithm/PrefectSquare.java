@@ -45,7 +45,6 @@ public class PrefectSquare {
                 left = x + 1;
             }
         }
-
         return false;
     }
 }

@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * 快速排序 分治思想 将原始数据分为两部分
  * 时间复杂度O(nlogn)
- * 原生排序算法
+ * 原地排序算法
  * 非稳定排序算法，数值相等的数据在排序后位置可能会交换或改变
  */
 public class QuickSort {
@@ -40,6 +40,11 @@ public class QuickSort {
 
     /**
      * 查找分区点
+     * 1.选择最后一个结点作为锚点 pivot=a[r]
+     * 2.i 和 j 指向同一起点 i=p,
+     * 3.对 j 进行 p 到 r 的循环，如果 a[j]<pivot 如果i==j ++i 否则交换 a[i] 和 a[j]
+     * 4.循环结束后交换 a[i] 和 a[r]
+     * 5.返回 i
      *
      * @param a
      * @param p
