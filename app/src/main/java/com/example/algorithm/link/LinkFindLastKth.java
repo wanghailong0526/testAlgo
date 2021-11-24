@@ -27,7 +27,7 @@ public class LinkFindLastKth {
             ++i;
         }
 
-        if (fast == null) return list;
+        if (fast == null) return list;//倒数这个结点超过了链表长度
 
         Node slow = list;
         //快慢指针再一起走
@@ -40,3 +40,29 @@ public class LinkFindLastKth {
         return slow;//结果
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

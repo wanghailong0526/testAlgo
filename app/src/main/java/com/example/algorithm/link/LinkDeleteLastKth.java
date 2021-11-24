@@ -14,7 +14,7 @@ public class LinkDeleteLastKth {
         Node header = node;
         LinkUtils.createLink(node);
         LinkUtils.printAll(header);
-        header = deleteLastKth(header, 4);
+        header = deleteLastKth(header, 2);
         LinkUtils.printAll(header);
     }
 
@@ -32,16 +32,16 @@ public class LinkDeleteLastKth {
             ++i;
         }
 
-        if (fast == null) return list;
+        if (fast == null) return list;//倒数这个结点超过了链表长度
 
         Node slow = list;
-        Node prev = null;
+        Node prev = null;//倒数第k个结点的前驱结点
         while (fast.next != null) {
             fast = fast.next;
             prev = slow;
             slow = slow.next;
         }
-        System.out.println("K num:" + slow.data);
+        System.out.println("倒数第 " + k + " 个数为:" + slow.data);
         if (prev == null) {//如果删除的是第一个结点
             list = list.next;
         } else {//如果删除的不是第一个结点
