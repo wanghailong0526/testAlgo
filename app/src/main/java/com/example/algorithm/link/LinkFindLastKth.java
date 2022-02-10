@@ -18,6 +18,16 @@ public class LinkFindLastKth {
 //        LinkUtils.printAll(header);
     }
 
+    /**
+     * 使用快慢指针
+     * 1.快指针先走K步 如果快指针为 null 返回list
+     * 2.慢指针和快指针再一起走
+     * 3.当快指针指向最后一个结点时，慢指针指向的就是倒数第K个结点
+     *
+     * @param list
+     * @param k
+     * @return
+     */
     private static Node findLastKth(Node list, int k) {
         Node fast = list;
         int i = 1;

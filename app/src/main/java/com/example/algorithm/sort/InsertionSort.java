@@ -18,10 +18,10 @@ public class InsertionSort {
         if (n <= 1) {
             return;
         }
-        for (int i = 1; i < n; i++) {
+        for (int i = 1; i < n; ++i) {
             int value = a[i];
             int j = i - 1;//交换次数和比较次数
-            for (; j >= 0; j--) {
+            for (; j >= 0; --j) {
                 //移动数据
                 if (a[j] > value) {//前面的数比后面的数大就移动数据
                     a[j + 1] = a[j];

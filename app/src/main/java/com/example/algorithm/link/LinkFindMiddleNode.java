@@ -22,7 +22,8 @@ public class LinkFindMiddleNode {
     }
 
     public static Node findMiddleNode(Node list) {
-        Node fast = list;// Node  fast = list.next;//若链表长度为偶数，这两个操作获取到的值不同
+        // Node  fast = list.next;//若链表长度为偶数，这两个操作获取到的值不同
+        Node fast = list;
         Node slow = list;
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
