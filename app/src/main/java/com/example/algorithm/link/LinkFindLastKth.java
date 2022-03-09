@@ -6,7 +6,7 @@ import com.example.algorithm.Node;
 /**
  * @author : wanghailong
  * @date :
- * @description:找到链表倒数第K个结点
+ * @description:查找链表倒数第K个结点
  */
 public class LinkFindLastKth {
     public static void main(String[] args) {
@@ -48,6 +48,24 @@ public class LinkFindLastKth {
         System.out.println("倒数第 " + k + " 个元素值：" + slow.data);
 
         return slow;//结果
+    }
+
+    private static Node findLastKth2(Node list, int k) {
+        Node fast = list;
+        int i = 1;
+        while (fast != null && i < k) {
+            fast = fast.next;
+            ++i;
+        }
+        if (fast == null) {//倒数的数量超过了链表长度
+            return list;
+        }
+        Node slow = list;
+        while (fast.next != null) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return slow;
     }
 }
 

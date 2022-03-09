@@ -44,10 +44,6 @@ public class BubbleSort {
         }
     }
 
-    private static void swap(int a, int b) {
-
-    }
-
     /**
      * 找到数组中只出现一次的数
      * 给定一个非空整数数组,除了某个元素只出现一次以外,

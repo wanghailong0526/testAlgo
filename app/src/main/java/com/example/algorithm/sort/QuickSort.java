@@ -27,15 +27,9 @@ public class QuickSort {
     // 快速排序递归函数，p起始下标,r为结束下标
     private static void quickSortInternally(int[] a, int p, int r) {
         if (p >= r) return;
-
         int q = partition(a, p, r); // 获取分区点
-        System.out.println("A p=" + p + " r=" + (q - 1));
-        System.out.println("A 执行了前半部分！！！");
         quickSortInternally(a, p, q - 1);
-
-        System.out.println("B q=" + (q + 1) + " r=" + r);
         quickSortInternally(a, q + 1, r);
-        System.out.println("B 执行了后半部分！！！");
     }
 
     /**
@@ -60,7 +54,7 @@ public class QuickSort {
                     ++i;
                 } else {
                     int tmp = a[i];
-                    a[i++] = a[j];
+                    a[++i] = a[j];
                     a[j] = tmp;
                 }
             }
