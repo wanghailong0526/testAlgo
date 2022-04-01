@@ -22,7 +22,22 @@ public class LinkUtils {
      * @return
      */
     public static Node createLink(Node node) {
-        for (int i = 1; i < 4; i++) {
+        for (int i = 1; i < 4; ++i) {
+            Node node1 = new Node(null, i);
+            node.next = node1;
+            node = node.next;
+        }
+        return node;
+    }
+
+    /**
+     * 根据头结点创建链表
+     *
+     * @param node
+     * @return
+     */
+    public static Node createLink(Node node, int start, int end) {
+        for (int i = start; i < end; ++i) {
             Node node1 = new Node(null, i);
             node.next = node1;
             node = node.next;

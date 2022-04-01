@@ -19,7 +19,7 @@ public class LinkCheckCircle {
         LinkUtils.printAll(header);
         System.out.println();
         link.next = header;
-        System.out.println("是否有环路：" + (checkCircle(header) ? "有" : "无"));
+        System.out.println("是否有环路：" + (checkCircle(header) ? "有" : "无") + ",入环的第一结点为 " + detectCycle(header).data);
 
     }
 
@@ -30,6 +30,7 @@ public class LinkCheckCircle {
      * @return
      */
     public static boolean checkCircle(Node list) {
+
         Node fast = list.next;
         Node slow = list;
         while (fast != null && fast.next != null) {
@@ -40,6 +41,38 @@ public class LinkCheckCircle {
             }
         }
         return false;
+    }
+
+    /**
+     * 检测入环的第一个结点
+     * 快慢指针相遇后，慢指针回到起点，
+     * 这时候快慢指针一样的速度走，
+     * 相遇时，就是入环点
+     *
+     * @param head
+     * @return
+     */
+    public static Node detectCycle(Node head) {
+        if (head == null) {
+            return null;
+        }
+        Node fast = head;
+        Node slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            //快慢指针相等表示有环
+            if (slow == fast) {
+                //回到起点一起相同速度走
+                while (head != fast) {
+                    head = head.next;
+                    fast = fast.next;
+                }
+                return head;
+            }
+
+        }
+        return null;
     }
 }
 

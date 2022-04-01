@@ -39,10 +39,8 @@ public class PrintNumber {
         /***使用 synchronized 一把锁两个线程****/
 
         /***使用 synchronized 配合wait(),notify()一把锁两个线程****/
-
-//        new Thread(new Printer(), "奇数线程").start();
-//        new Thread(new Printer(), "偶数线程").start();
-
+        new Thread(new Printer(), "2").start();
+        new Thread(new Printer(), "1").start();
         /***使用 synchronized 配合wait(),notify()一把锁两个线程****/
 
     }
@@ -55,8 +53,9 @@ public class PrintNumber {
                 synchronized (object) {
                     //打印数字并立即释放锁
                     System.out.println("whl **" + Thread.currentThread().getName() + ": " + count++);
-                    object.notify();
-                    if (count <= 100) {
+
+                    object.notify();//不会立即释放锁，要等到synchronized代码块执行结束，cpu重新调度最后一个进入wait状态的线程
+                    if (count < 100) {
                         try {
                             object.wait();//线程进入等待状态
                         } catch (Exception e) {
@@ -64,6 +63,7 @@ public class PrintNumber {
                         }
                     }
                 }
+                
             }
         }
     }
