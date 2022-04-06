@@ -1,4 +1,4 @@
-package com.example.algorithm;
+package com.example.algorithm.DP;
 
 /**
  * @author : wanghailong
