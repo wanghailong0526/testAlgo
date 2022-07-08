@@ -17,17 +17,33 @@ public class MaxSubArraySum {
 
     public static void main(String[] args) {
         int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-        System.out.println("最大子数组的和为：" + maxSubArray(nums));
+        System.out.println("最大子数组的和为：" + maxSubArray(nums, nums.length));
     }
 
-    public static int maxSubArray(int[] nums) {
-        int size = nums.length;
-        int[] dp = new int[size];
+    public static int maxSubArray(int[] nums, int n) {
+        int[] dp = new int[n];
         int res = dp[0] = nums[0];
-        for (int i = 1; i < size; ++i) {
+        for (int i = 1; i < n; ++i) {
             dp[i] = Math.max(dp[i - 1] + nums[i], nums[i]);
             res = Math.max(res, dp[i]);
         }
         return res;
+    }
+
+
+    public static void maxArraySub(int[] nums, int n) {
+        int sum = sum(nums, n);
+        int states[][] = new int[n][sum];
+//        states[0][0] = true;
+    }
+
+    public static int sum(int[] nums, int n) {
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            if (i > 0) {
+                sum = sum + i;
+            }
+        }
+        return sum;
     }
 }

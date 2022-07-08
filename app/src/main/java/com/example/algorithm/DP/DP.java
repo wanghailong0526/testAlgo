@@ -3,7 +3,7 @@ package com.example.algorithm.DP;
 /**
  * @author : wanghailong
  * @date :
- * @description: 动态规划
+ * @description: 动态规划 解决背包问题
  */
 public class DP {
     private static int[] weight = {2, 2, 4, 6, 3}; // 物品重量
@@ -13,15 +13,23 @@ public class DP {
 
     public static void main(String[] args) {
 //        knapsack(weight, n, w);
-//        knapsack2(weight, n, w);
-        knapsack3(weight, value, n, w);
+        knapsack2(weight, n, w);
+//        knapsack3(weight, value, n, w);
     }
 
+    /**
+     * 方法一 解决背包问题 使用二维数组存储状态转换
+     *
+     * @param weight
+     * @param n
+     * @param w
+     * @return
+     */
     //weight:物品重量，n:物品个数，w:背包可承载重量   行_物品个数   列_背包承受总重量
     public static int knapsack(int[] weight, int n, int w) {
         boolean[][] states = new boolean[n][w + 1]; // 默认值false
-        states[0][0] = true;  // 第一行的数据要特殊处理，可以利用哨兵优化
-        if (weight[0] <= w) {
+        states[0][0] = true;  // 第一行的数据要特殊处理，可以利用哨兵优化 这行代码作用是选择不装第0个物品
+        if (weight[0] <= w) {//选择装入第0个物品
             states[0][weight[0]] = true;
         }
         for (int i = 1; i < n; ++i) { // 动态规划状态转移
@@ -49,6 +57,14 @@ public class DP {
         return 0;
     }
 
+    /**
+     * 方法二 解决背包问题 使用一维数组存储状态转换 更少的内存空间
+     *
+     * @param items
+     * @param n
+     * @param w
+     * @return
+     */
     public static int knapsack2(int[] items, int n, int w) {
         boolean[] states = new boolean[w + 1]; // 默认值false
         states[0] = true;  // 第一行的数据要特殊处理，可以利用哨兵优化
@@ -62,13 +78,16 @@ public class DP {
         }
         for (int i = w; i >= 0; --i) { // 输出结果
             System.out.println("whl ** i: " + i);
-//            if (states[i] == true) return i;
+            if (states[i] == true) return i;
         }
         return 0;
     }
 
 
-    //在满足背包最大重量限制的前提下，背包中可装入物品的总价值最大值
+    /**
+     * 在满足背包最大重量限制的前提下
+     * 背包中可装入物品的总价值最大值
+     */
     public static int knapsack3(int[] weight, int[] value, int n, int w) {
         int[][] states = new int[n][w + 1];
         for (int i = 0; i < n; ++i) { // 初始化states
