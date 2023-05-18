@@ -47,7 +47,7 @@ public class LinkCheckCircle {
      * 检测入环的第一个结点
      * 快慢指针相遇后，慢指针回到起点，
      * 这时候快慢指针一样的速度走，
-     * 相遇时，就是入环点
+     * 相遇时，慢指针就是入环点
      *
      * @param head
      * @return
@@ -63,7 +63,7 @@ public class LinkCheckCircle {
             slow = slow.next;
             //快慢指针相等表示有环
             if (slow == fast) {
-                //回到起点一起相同速度走
+                //慢指针回到起点一起相同速度走
                 while (head != fast) {
                     head = head.next;
                     fast = fast.next;
