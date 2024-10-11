@@ -22,7 +22,7 @@ public class LinkDeleteLastKth {
      * 删除结点需要找到被删除结点的前驱结点
      * 删除倒数第K个结点 使用快慢指针
      * 1.让快指针先走 k 步
-     * 2.慢指针指向链表头结点和快指针再一起走
+     * 2.慢指针指向链表头结点，然后快慢指针一起出发
      * 3.快指针走到最后一个结点，慢指针指向的就是倒数第 K 个结点
      */
     public static Node deleteLastKth(Node list, int k) {

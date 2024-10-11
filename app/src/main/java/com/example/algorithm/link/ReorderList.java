@@ -22,8 +22,6 @@ public class ReorderList {
         System.out.println("重排链表后");
         reOrderList(head);
         LinkUtils.printAll(head);
-
-
     }
 
     /**
@@ -51,6 +49,6 @@ public class ReorderList {
             list.get(j).next = list.get(i);
             --j;
         }
-        list.get(i).next = null;//最后一个结点指向空
+        list.get(i).next = null;//最后一个结点的 next 指向空
     }
 }

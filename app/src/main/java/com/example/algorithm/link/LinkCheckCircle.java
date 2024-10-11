@@ -63,7 +63,7 @@ public class LinkCheckCircle {
             slow = slow.next;
             //快慢指针相等表示有环
             if (slow == fast) {
-                //慢指针回到起点一起相同速度走
+                //慢指针回到起点以相同速度走
                 while (head != fast) {
                     head = head.next;
                     fast = fast.next;

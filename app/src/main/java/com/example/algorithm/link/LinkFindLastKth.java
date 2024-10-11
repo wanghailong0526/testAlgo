@@ -49,24 +49,6 @@ public class LinkFindLastKth {
 
         return slow;//结果
     }
-
-    private static Node findLastKth2(Node list, int k) {
-        Node fast = list;
-        int i = 1;
-        while (fast != null && i < k) {
-            fast = fast.next;
-            ++i;
-        }
-        if (fast == null) {//倒数的数量超过了链表长度
-            return list;
-        }
-        Node slow = list;
-        while (fast.next != null) {
-            fast = fast.next;
-            slow = slow.next;
-        }
-        return slow;
-    }
 }
 
 
