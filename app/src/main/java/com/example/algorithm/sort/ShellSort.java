@@ -11,7 +11,7 @@ import java.util.Arrays;
  * 在此我们选择增量 gap=length/2，缩小增量以 gap = gap/2 的方式，用序列 {n/2,(n/2)/2...1} 来表示
  */
 public class ShellSort {
-    
+
     public static void main(String[] args) {
         int a[] = {7, 6, 9, 3, 1, 5, 2, 4};
         System.out.println("排序前：" + Arrays.toString(a));

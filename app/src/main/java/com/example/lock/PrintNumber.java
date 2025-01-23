@@ -39,8 +39,8 @@ public class PrintNumber {
         /***使用 synchronized 一把锁两个线程****/
 
         /***使用 synchronized 配合wait(),notify()一把锁两个线程****/
-        new Thread(new Printer(), "2").start();
-        new Thread(new Printer(), "1").start();
+//        new Thread(new Printer(), "2").start();
+//        new Thread(new Printer(), "1").start();
         /***使用 synchronized 配合wait(),notify()一把锁两个线程****/
 
     }
@@ -63,7 +63,7 @@ public class PrintNumber {
                         }
                     }
                 }
-                
+
             }
         }
     }

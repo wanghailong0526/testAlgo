@@ -276,11 +276,11 @@ public class TreeTraversal2 {
     public static TreeNode invertTreeBFS(TreeNode root) {
         if (root == null) return null;
         ArrayDeque<TreeNode> que = new ArrayDeque<TreeNode>();
-        que.offer(root);
+        que.offer(root);//入队列
         while (!que.isEmpty()) {
             int size = que.size();
             while (size-- > 0) {
-                TreeNode node = que.poll();
+                TreeNode node = que.poll();//取队首元素
                 swap(node);
                 if (node.left != null) que.offer(node.left);
                 if (node.right != null) que.offer(node.right);

@@ -12,7 +12,8 @@ public class InsertionSort {
     public static void main(String[] args) {
         int a[] = {3, 2, 1, 4, 7, 9};
         System.out.println("排序前：" + Arrays.toString(a));
-        insertionSort(a, a.length);
+//        insertionSor t(a, a.length);
+        insertSort(a, a.length);
         System.out.println("排序后：" + Arrays.toString(a));
     }
 
@@ -32,6 +33,18 @@ public class InsertionSort {
                 }
             }
             a[j + 1] = value;//插入数据
+        }
+    }
+
+    private static void insertSort(int[] src, int srcLen) {
+        if (srcLen <= 1) return;
+        for (int i = 1; i < srcLen; ++i) {
+            int value = src[i];
+            int j = i;
+            for (; j > 0 && value < src[j - 1]; --j) {
+                src[j] = src[j - 1];
+            }
+            src[j] = value;
         }
     }
 }

@@ -12,6 +12,7 @@ import com.example.algorithm.Node;
  */
 public class LinkCheckCircle {
     public static void main(String[] args) {
+        
         Node node = new Node(null, 0);
         Node header = node;
         Node link = LinkUtils.createLink(node);
