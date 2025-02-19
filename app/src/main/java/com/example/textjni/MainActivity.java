@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
+import android.view.ViewStub;
 import android.widget.TextView;
 
 import com.example.textjni.databinding.ActivityMainBinding;
@@ -38,11 +40,19 @@ public class MainActivity extends AppCompatActivity {
                 tv.setText(name + age);
             }
         }, 3000);
+        ViewStub stub = new ViewStub(this);
+        stub.setOnInflateListener(new ViewStub.OnInflateListener() {
+            @Override
+            public void onInflate(ViewStub stub, View inflated) {
+
+            }
+        });
     }
 
     private int add(int n1, int n2) {
         return n1 + n2;
     }
+
     private native void callAddMethod();
 
     public native void changeName();//native 修改java的name
